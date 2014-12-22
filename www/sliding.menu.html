@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Onsen UI - starter</title>
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css">  
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script src="lib/onsen/js/angular/angular.js"></script>    
+    <script src="lib/onsen/js/onsenui.js"></script>
+
+    <script src="cordova.js"></script>
+
+    <script>
+    var module = angular.module('app', ['onsen']);
+    </script>
+</head>
+
+<body>  
+
+    <ons-sliding-menu menu-page="menu.html" main-page="page.html" side="left" var="menu" type="reveal" max-slide-distance="260px" swipable="true"></ons-sliding-menu>
+
+
+    <ons-template id="menu.html">
+        <ons-page modifier="menu-page">
+            <ons-toolbar modifier="transparent"></ons-toolbar>
+
+            <ons-list class="menu-list">
+                <ons-list-item class="menu-item" ng-click="menu.setMainPage('home.html', {closeMenu: true})">
+                    <ons-icon icon="fa-plus"></ons-icon>
+                    New Post
+                </ons-list-item>
+
+                <ons-list-item class="menu-item" ng-click="menu.setMainPage('template/test.html', {closeMenu: true})">
+                    <ons-icon icon="fa-bookmark"></ons-icon>
+                    Bookmark
+                </ons-list-item>
+
+                <ons-list-item class="menu-item" ng-click="menu.setMainPage('template/shop_detail.html', {closeMenu: true})">
+                    <ons-icon icon="fa-twitter"></ons-icon>
+                    Official Twitter
+                </ons-list-item>
+            </ons-list>
+
+            <br>
+
+            <ons-list class="bottom-menu-list">
+                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page4.html', {closeMenu: true})">
+                    Settings
+                    <div class="notification menu-notification">3</div>
+                </ons-list-item>
+
+                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('login.html', {closeMenu: true})">Help</ons-list-item>
+
+                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('minipic.list.html', {closeMenu: true})">Send feedback</ons-list-item>
+            </ons-list>
+        </ons-page>
+    </ons-template>
+
+
+<!--     <ons-template id="home.html" ng-controller="buttonCtrl">
+        <ons-page modifier="home">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.toggle()">
+                        <ons-icon icon="ion-beer" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <ons-row class="social_icons">
+                <ons-col>
+                    <ons-icon icon="fa-twitter"></ons-icon>
+                    <ons-icon icon="fa-facebook"></ons-icon>
+                    <ons-icon icon="fa-instagram"></ons-icon>
+                </ons-col>
+            </ons-row>
+        </ons-page>
+    </ons-template> -->
+
+    <ons-template id="page.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button ng-click="ons.slidingMenu.toggle()">
+              <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">Title</div>
+        </ons-toolbar>
+
+      </ons-page>
+    </ons-template>
+
+</body>
+</html>
